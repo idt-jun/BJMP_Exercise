@@ -37,8 +37,15 @@ public class Inmate {
 	private Date commitmentDate;
 
 	@ManyToOne	
-	@JoinColumn(name="JAIL_ID")	//Many Inmates are detained to One Jail. 
+	@JoinColumn(name="JAIL_ID")	//Many Inmates are detained to One Jail. FK is the id from jail
 	private Jail jail;
+
+	@Temporal(DATE)
+	@Column(name="TentativeRelease_Date")
+	private Date tentativeReleasedDate;
+	
+	@Column(name="Budget_For_Meal")
+	private int mealBudget;
 	
 	public int getId() {
 		return id;
@@ -86,6 +93,22 @@ public class Inmate {
 
 	public void setJail(Jail jail) {
 		this.jail = jail;
+	}
+
+	public Date getTentativeReleasedDate() {
+		return tentativeReleasedDate;
+	}
+
+	public void setTentativeReleasedDate(Date tentativeReleasedDate) {
+		this.tentativeReleasedDate = tentativeReleasedDate;
+	}
+
+	public int getMealBudget() {
+		return mealBudget;
+	}
+
+	public void setMealBudget(int mealBudget) {
+		this.mealBudget = mealBudget;
 	}
 	
 	

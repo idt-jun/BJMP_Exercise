@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Trustee {
@@ -13,8 +15,12 @@ public class Trustee {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	
-	@Column(name="Name")
-	private String name;
+	@Column(name="Duty")
+	private String duty;
+	
+	@OneToOne
+	@JoinColumn(name = "Inmate_id")
+	private Inmate inmate;
 
 	public int getId() {
 		return id;
@@ -24,14 +30,13 @@ public class Trustee {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getDuty() {
+		return duty;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setDuty(String duty) {
+		this.duty = duty;
 	}
-	
-	
+
 	
 }	

@@ -7,7 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 
 
 @Entity
@@ -25,6 +27,10 @@ public class Officer {
 	
 	@ManyToMany	
 	private List<Jail> jails;//Many Officers report to Many Jail, assuming that there are shifting officers distributed to different jails
+	
+	@OneToOne
+	@JoinColumn(name = "Trustee_id")
+	private Trustee trustee;
 	
 	public int getId() {
 		return id;

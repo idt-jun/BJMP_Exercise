@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -25,9 +27,16 @@ public class Jail {
 	@Column(name = "Location")
 	private String location;
 	
+	@Enumerated(EnumType.STRING)
 	@Column(name = "Region")
-	private String region;
+	private Region region;
 	
+	public Region getRegion() {
+		return region;
+	}
+	public void setRegion(Region region) {
+		this.region = region;
+	}
 	@Column(name = "Capacity")
 	private int capacity;
 	
@@ -49,12 +58,7 @@ public class Jail {
 	public void setLocation(String location) {
 		this.location = location;
 	}
-	public String getRegion() {
-		return region;
-	}
-	public void setRegion(String region) {
-		this.region = region;
-	}
+
 	public int getCapacity() {
 		return capacity;
 	}
