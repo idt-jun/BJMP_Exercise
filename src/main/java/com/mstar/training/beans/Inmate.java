@@ -37,7 +37,7 @@ public class Inmate {
 	private Date commitmentDate;
 
 	@ManyToOne	
-	@JoinColumn(name="JAIL_ID")	//Many Inmates are detained to One Jail. FK is the id from jail
+	@JoinColumn(name="JAIL_ID")	//Many Inmates are detained to One Jail. Use an FK here to link the Jail table
 	private Jail jail;
 
 	@Temporal(DATE)
