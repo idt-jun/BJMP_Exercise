@@ -11,6 +11,21 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 
+/**
+ *	Your score: (YES is 1 point)
+ *
+ *	Has Name: YES
+ *	Has Jail: YES
+ *	Correct Relationship w/ Jail: NO
+ *	Has Rank: YES
+ *	Has Trustee: YES
+ *	Correct Relationship w/ Trustee: YES
+ *
+ *	Remarks:
+ *	1. Being a Jail Officer, as depicted in pop-culture, is typically a full-time job and such an officer can only sanely work for one Jail at a time.
+ *
+ *	Final Score: 5 of 6
+ */
 
 @Entity
 public class Officer {
